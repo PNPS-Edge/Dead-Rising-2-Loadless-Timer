@@ -102,6 +102,12 @@ startup
                 settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
                 settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
 
+    // Overtime
+        settings.Add("overtime", false, "Overtime", "splits");
+
+            settings.Add("ot_TK_Intro", false, "TK Battle Intro", "overtime");
+            settings.Add("ot_TK_Death", false, "TK Death", "overtime");
+
     // Max Level
         settings.Add("maxLevel", false, "Max Level", "splits");
             for (int level = 5; level <= 50; level += 5)
@@ -167,6 +173,8 @@ init
         {"060_",  "c73_Facts"},
         {"060a",  "fac_Battle_Start"},
         {"062_",  "fac_Battle_End"},
+        {"066_",  "ot_TK_Intro"},
+        {"067_",  "ot_TK_Death"},
         {"070_",  "ending_b"},
     };
 }
