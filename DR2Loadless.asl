@@ -24,8 +24,8 @@ startup
                 settings.Add("sullivan", false, "Back To Safe House Way", "zombrex1");
                 settings.Add("giveKateyZombrex1", false, "Give Katey Zombrex 1", "zombrex1");
 
-    // Zombie Genocider
-        settings.Add("zombieGenocider", false, "Zombie Genocider", "splits");
+    // Zombie Genocide Master
+        settings.Add("zombieGenocider", false, "Zombie Genocide Master", "splits");
             vars.GenociderKills = new List<int> {2500, 5000, 7500, 10000, 10719, 12500, 15000, 17500, 20000, 21438, 22500, 25000, 27500, 30000, 32157, 32500, 35000, 37500, 40000, 42500, 42876, 45000, 47500, 50000, 52500, 53594};
             foreach(int count in vars.GenociderKills)
             {
@@ -84,7 +84,7 @@ split
     }
 
 
-    // Zombie Genocider
+    // Zombie Genocide Master
     if (current.ZombiesKilled != old.ZombiesKilled)
     {
         foreach(int count in vars.GenociderKills)
