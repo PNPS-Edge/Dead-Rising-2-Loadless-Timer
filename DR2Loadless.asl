@@ -108,6 +108,20 @@ startup
             settings.Add("ot_TK_Intro", false, "TK Battle Intro", "overtime");
             settings.Add("ot_TK_Death", false, "TK Death", "overtime");
 
+    // PsychoSkip
+        settings.Add("psychoskip", false, "PsychoSkip", "splits");
+            settings.Add("psy_Chef_Antoine", false, "Chef Antoine", "psychoskip");
+            settings.Add("psy_Randy_Virgin", false, "Randy the Virgin", "psychoskip");
+            settings.Add("psy_Leon_Bell", false, "Leon the Contestant", "psychoskip");
+            settings.Add("psy_Brandon_Cure", false, "Brandon Cure Member", "psychoskip");
+            settings.Add("psy_Reed_Roger", false, "The Magicians", "psychoskip");
+            settings.Add("psy_Slappy", false, "Slappy", "psychoskip");
+            settings.Add("psy_Carl_Mailman", false, "Carl Mailman", "psychoskip");
+            settings.Add("psy_Security_Gard", false, "Seymour Security Agent", "psychoskip");
+            settings.Add("psy_Ted_Death", false, "Snowflake and Ted", "psychoskip");
+            settings.Add("psy_Bibi_Love_1", false, "Bibi Love Ending 1", "psychoskip");
+            settings.Add("psy_Bibi_Love_2", false, "Bibi Love Ending 2", "psychoskip");
+
     // Max Level
         settings.Add("maxLevel", false, "Max Level", "splits");
             for (int level = 5; level <= 50; level += 5)
@@ -176,6 +190,22 @@ init
         {"066_",  "ot_TK_Intro"},
         {"067_",  "ot_TK_Death"},
         {"070_",  "ending_b"},
+        {"077_",  "psy_Chef_Antoine"},
+        {"079_",  "psy_Leon_Bell"},
+        {"081_",  "psy_Randy_Virgin"},
+        {"083_",  "psy_Bibi_Love_1"},
+        {"083a",  "psy_Bibi_Love_2"},
+        {"085_",  "psy_Reed_Roger"},
+        {"086_",  "psy_Slappy"},
+        {"088_",  "c51_Militiamen"},
+        {"090_",  "psy_Carl_Mailman"},
+        {"092_",  "psy_Brandon_Cure"},
+        {"094_",  "psy_Security_Gard"},
+        {"095_",  "c22_SnowflackeBattle"},
+        {"095a",  "psy_Ted_Death"},
+        {"096_",  "psy_Snowflacke_Joins"}
+    };
+
     };
 }
 
