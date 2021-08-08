@@ -4,6 +4,7 @@ state("deadrising2")
   bool IsCutsceneRunning : 0x9E5C5C, 0xB08, 0x9F8, 0x20;
   string4 CutsceneId : 0x9CB0FC, 0x58, 0x37;
   int ZombiesKilled : 0x9DE9A8, 0x8, 0x38;
+  int PlayerLevel : 0x9DE9A8, 0x8, 0x20;
 }
 
 startup 
@@ -99,6 +100,13 @@ startup
                 settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
                 settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
 
+    // Max Level
+        settings.Add("maxLevel", false, "Max Level", "splits");
+            for (int level = 5; level <= 50; level += 5)
+            {
+                settings.Add("level" + level.ToString(), false, "Level " + level.ToString(), "maxLevel");
+            }
+
     // Zombie Genocide Master
         settings.Add("zombieGenocider", false, "Zombie Genocide Master", "splits");
             vars.GenociderKills = new List<int> {2500, 5000, 7500, 10000, 10719, 12500, 15000, 17500, 20000, 21438, 22500, 25000, 27500, 30000, 32157, 32500, 35000, 37500, 40000, 42500, 42876, 45000, 47500, 50000, 52500, 53594};
@@ -193,6 +201,12 @@ split
         return settings[vars.Cutscenes[current.CutsceneId]];
     }
 
+
+    // Max Level
+    if (current.PlayerLevel != old.PlayerLevel)
+    {
+        return settings["level" + current.PlayerLevel.ToString()];
+    }
 
     // Zombie Genocide Master
     if (current.ZombiesKilled != old.ZombiesKilled)
