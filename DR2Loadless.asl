@@ -3,10 +3,13 @@ state("deadrising2")
   bool IsLoading: 0x9DC3F0, 0x38, 0x1C8;
   bool IsCutsceneRunning : 0x9E5C5C, 0xB08, 0x9F8, 0x20;
   string4 CutsceneId : 0x9CB0FC, 0x58, 0x37;
+
+  int InGameTime : 0xA11604, 0xA38, 0x2B94;
   int ZombiesKilled : 0x9DE9A8, 0x8, 0x38;
   int PlayerLevel : 0x9DE9A8, 0x8, 0x20;
   int Zombrex : 0xA11604, 0xA2C, 0x61C, 0x12D0, 0x1F0, 0x116C, 0x868, 0xC;
 
+  int RoomId : 0x9E5C50, 0x2318, 0x54, 0x9C0;
 }
 
 startup 
@@ -206,7 +209,19 @@ init
         {"096_",  "psy_Snowflacke_Joins"}
     };
 
+    vars.Rooms = new Dictionary<int, string>
+    {
+        {67,   "PAM"},  // Palissade Mall
+        {87,   "SAF"},  // Safehouse
+        {114,  "FCA"},  // Fortune City Arena
+        {138,  "FCE"},  // Fortune City Exterior
+        {148,  "RFP"},  // Royal Flush Plaza
+        {190,  "SRC"},  // Slot Ranch Casion
+        {208,  "FCH"},  // Fortune City Hotel
+        {220,  "YUC"},  // Yucatan Casino
     };
+
+    vars.CurrentRoomId = 0;
 }
 
 update 
@@ -239,6 +254,42 @@ split
         print(current.CutsceneId);
 
         return settings[vars.Cutscenes[current.CutsceneId]];
+    }
+
+    // Room transitions
+    if (!current.IsLoading && vars.CurrentRoomId != current.RoomId)
+    {
+        vars.CurrentRoomId = current.RoomId;
+    }
+
+    if (current.RoomId != old.RoomId)
+    {
+        if (vars.Rooms.ContainsKey(current.RoomId) && vars.Rooms.ContainsKey(old.RoomId))
+        {
+            string chapter = "0";
+            foreach (string key in vars.CaseProgress.Keys)
+            {
+                if (vars.CaseProgress[key].Contains(current.CampaignProgress))
+                {
+                    chapter = key;
+                    break;
+                }
+            }
+
+            string settingsKey = "case" + chapter + vars.Rooms[old.RoomId] + "->" + vars.Rooms[current.RoomId];
+            if (vars.Splits.Contains(settingsKey))
+            {
+                return false;
+            }
+
+            vars.Splits.Add(settingsKey);
+
+            // ONLY return if the setting is enabled, as some transitions are duplicates
+            if (settings[settingsKey])
+            {
+                return true;
+            };
+        }
     }
 
     // Zombrex Grab
