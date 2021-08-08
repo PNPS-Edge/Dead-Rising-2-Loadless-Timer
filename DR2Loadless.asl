@@ -2,7 +2,7 @@ state("deadrising2")
 {
   bool IsLoading: 0x9DC3F0, 0x38, 0x1C8;
   bool IsCutsceneRunning : 0x9E5C5C, 0xB08, 0x9F8, 0x20;
-  string3 CutsceneId : 0x9CB0FC, 0x58, 0x37;
+  string4 CutsceneId : 0x9CB0FC, 0x58, 0x37;
   int ZombiesKilled : 0x9DE9A8, 0x8, 0x38;
 }
 
@@ -14,15 +14,90 @@ startup
         settings.Add("72Hour", true, "72 Hour Splits", "splits");
             
             settings.Add("prologue", false, "Prologue Splits", "72Hour");
-                settings.Add("chuckVictory", false, "Chuck Victory", "prologue");
-                settings.Add("elevator1", false, "Elevator Twins", "prologue");
-                settings.Add("chuckRescueKatey", false, "Chuck Rescue Katey", "prologue");
-                settings.Add("exitTheStadium", false, "Chuck Rescue Katey", "prologue");
+                settings.Add("pro_TIRVictory", false, "TIR Victory", "prologue");
+                settings.Add("pro_LockerRoomElevator", false, "Locker Room Elevator", "prologue");
+                settings.Add("pro_RescueKatey", false, "Rescuing Katey", "prologue");
+                settings.Add("pro_ExitArena", false, "Exit Arena", "prologue");
 
             settings.Add("zombrex1", false, "Zombrex 1 Splits", "72Hour");
-                settings.Add("anotherWay1", false, "Another Way", "zombrex1");
-                settings.Add("sullivan", false, "Back To Safe House Way", "zombrex1");
-                settings.Add("giveKateyZombrex1", false, "Give Katey Zombrex 1", "zombrex1");
+                settings.Add("zo1_AirDuct", false, "Air Duct", "zombrex1");
+                settings.Add("zo1_Looters", false, "Looters", "zombrex1");
+                settings.Add("zo1_Sullivan", false, "Safehouse", "zombrex1");
+                settings.Add("zo1_Katey", false, "Zombrex 1", "zombrex1");
+
+            settings.Add("case1", false, "Case 1 Splits", "72Hour");
+                settings.Add("c11_Framed", false, "Case 1-1", "case1");
+
+                settings.Add("c12_Rebecca", false, "Case 1-2", "case1");
+
+                settings.Add("c13", false, "Case 1-3 Splits", "case1");
+                    settings.Add("c13_Gate", false, "Opening The Gate", "c13");
+                    settings.Add("c13_Security", false, "Case 1-3", "c13");
+
+                settings.Add("c14_Alliance", false, "Case 1-4 Splits", "case1");
+
+            settings.Add("case2", false, "Case 2 Splits", "72Hour");
+                settings.Add("c21_StaceySeesSomething", false, "Case 2-1", "case2");
+                settings.Add("c22_SnowflackeBattle", false, "Snowflake Intro Battle", "case2");
+                settings.Add("c22_TrainDock", false, "Train Platform", "case2");
+                settings.Add("c22_TrainBattle", false, "Train Battle", "case2");
+                settings.Add("c22_OnBoard", false, "Chuck on Board", "case2");
+                settings.Add("c22_TrainDefeated", false, "Case 2-2", "case2");
+            
+            settings.Add("zombrex2", false, "Zombrex 2", "72Hour");
+
+            settings.Add("case3", false, "Case 3 Splits", "72Hour");
+                settings.Add("case3-1", false, "Case 3-1", "case3");
+                    settings.Add("c31_explosion", false, "Explosion", "case3-1");
+                    settings.Add("c31_queenWasps", false, "Queen Wasps", "case3-1");
+
+                settings.Add("c32_Thwarted", false, "Case 3-2", "case3");
+
+            settings.Add("case4", false, "Case 4 Splits", "72Hour");
+                settings.Add("c41_twinsBossIntro", false, "Twins Battle Intro", "case4");
+                settings.Add("c41_AmbersDeath", false, " Case 4-1 Amber's Death", "case4");
+                settings.Add("c41_CrystalsDeath", false, "Case 4-1 Crystal's Death", "case4");
+
+            settings.Add("zombrex3", false, "Zombrex 3", "72Hour");
+
+            settings.Add("case5", false, "Case 5 Splits", "72Hour");
+                settings.Add("c51_Gateway", false, "Case 5-1", "case5");
+                    
+                settings.Add("case52", false, "Case 5-2", "case5"); 
+                    settings.Add("c52_Militiamen", false, "Militia Men Intro", "case52");
+                    settings.Add("c52_HelicopterIntro", false, "Helicopter Battle Intro", "case52");
+                    settings.Add("c52_HelicopterDeath", false, "Helicopter Battle End", "case52");
+                    settings.Add("c52_TkSafehouse", false, "Case 5-2", "case52");
+
+            settings.Add("zombrex4", false, "Zombrex 4", "72Hour");
+
+            settings.Add("case6", false, "Case 6 Splits", "72Hour");
+                settings.Add("c61_all_hell", false, "Case 6-1", "case6");
+
+                settings.Add("case62", false, "Case 6-2", "case6");
+                    settings.Add("c62_Baykin_Intro", false, "Sgt Baykin Intro", "case62");
+                     settings.Add("c62_Baykin_Death", false, "Sgt Baykin Death", "case62");
+
+                settings.Add("c63_Safehouse_Overrun", false, "Case 6-3", "case6");
+
+                settings.Add("c64_What_Happened", false, "Case 6-4", "case6");
+
+            settings.Add("case7", false, "Case 7 Splits", "72Hour");
+                settings.Add("c71_Bigger_than_TK", false, "Case 7-1", "case7");
+
+                settings.Add("case72", false, "Case 7-2", "case7");
+                    settings.Add("c72_Sewers", false, "Enter the Sewers", "case72");
+                    settings.Add("c72_Queens_Exit", false, "Case 7-2", "case72");
+
+                settings.Add("c73_Facts", false, "Case 7-3", "case7");
+
+            settings.Add("facts", false, "THE FACTS", "72Hour");
+                settings.Add("fac_Battle_Start", false, "Sullivan Battle Start", "facts");
+                settings.Add("fac_Battle_End", false, "Sullivan Battle End", "facts");
+
+            settings.Add("endings", false, "ENDING A Splits", "72Hour");
+                settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
+                settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
 
     // Zombie Genocide Master
         settings.Add("zombieGenocider", false, "Zombie Genocide Master", "splits");
@@ -40,13 +115,49 @@ init
 
     vars.Cutscenes = new Dictionary<string, string>
     {
-        {"006",  "chuckVictory"},
-        {"009",  "elevator1"},
-        {"012",  "chuckRescueKatey"},
-        {"013",  "exitTheStadium"},
-        {"017",  "anotherWay1"},
-        {"021",  "sullivan"},
-        {"023",  "giveKateyZombrex1"}
+        {"006_",  "pro_TIRVictory"},
+        {"009_",  "pro_LockerRoomElevator"},
+        {"012_",  "pro_RescueKatey"},
+        {"013_",  "pro_ExitArena"},
+        {"017_",  "zo1_AirDuct"},
+        {"019_",  "zo1_Looters"},
+        {"021_",  "zo1_Sullivan"},
+        {"023_",  "zo1_Katey"},
+        {"024_",  "c11_Framed"},
+        {"025_",  "c12_Rebecca"},
+        {"025a",  "c13_Gate"},
+        {"026_",  "c13_Security"},
+        {"028_",  "c14_Alliance"},
+        {"029_",  "c21_StaceySeesSomething"},
+        {"030_",  "c22_TrainDock"},
+        {"031_",  "c22_TrainBattle"},
+        {"032_",  "c22_OnBoard"},
+        {"033_",  "c22_TrainDefeated"},
+        {"034_",  "zombrex2"},
+        {"035_",  "c31_queenWasps"},
+        {"036_",  "c31_explosion"},
+        {"037_",  "c32_Thwarted"},
+        {"039_",  "c41_twinsBossIntro"},
+        {"041_",  "c41_CrystalsDeath"},
+        {"041a",  "c41_AmbersDeath"},
+        {"042_",  "zombrex3"},
+        {"043_",  "c51_gateway"},
+        {"045_",  "c51_HelicopterIntro"},
+        {"046_",  "c51_HelicopterDeath"},
+        {"048a",  "c52_TkSafehouse"},
+        {"049_",  "zombrex4"},
+        {"051_",  "c61_all_hell"},
+        {"052_",  "c62_Baykin_Intro"},
+        {"053_",  "c62_Baykin_Death"},
+        {"054a",  "c63_Safehouse_Overrun"},
+        {"055a",  "c64_What_Happened"},
+        {"057_",  "c71_Bigger_than_TK"},
+        {"057a",  "c72_Sewers"},
+        {"059_",  "c72_Queens_Exit"},
+        {"060_",  "c73_Facts"},
+        {"060a",  "fac_Battle_Start"},
+        {"062_",  "fac_Battle_End"},
+        {"070_",  "ending_b"},
     };
 }
 
@@ -57,12 +168,12 @@ update
 
 start 
 {
-    return old.CutsceneId == "001" && current.CutsceneId != "001";
+    return old.CutsceneId == "001_" && current.CutsceneId != "001_";
 }
 
 reset 
 {
-    return old.CutsceneId != "001" && current.CutsceneId == "001";
+    return old.CutsceneId != "001_" && current.CutsceneId == "001_";
 }
 
 isLoading
@@ -72,8 +183,7 @@ isLoading
 
 split
 {
-    // 72 Hours
-
+    // Cutscene Split
     if (vars.Cutscenes.ContainsKey(current.CutsceneId) && !vars.Splits.Contains(vars.Cutscenes[current.CutsceneId]))
     {
         vars.Splits.Add(vars.Cutscenes[current.CutsceneId]);
