@@ -5,6 +5,8 @@ state("deadrising2")
   string4 CutsceneId : 0x9CB0FC, 0x58, 0x37;
   int ZombiesKilled : 0x9DE9A8, 0x8, 0x38;
   int PlayerLevel : 0x9DE9A8, 0x8, 0x20;
+  int Zombrex : 0xA11604, 0xA2C, 0x61C, 0x12D0, 0x1F0, 0x116C, 0x868, 0xC;
+
 }
 
 startup 
@@ -201,6 +203,11 @@ split
         return settings[vars.Cutscenes[current.CutsceneId]];
     }
 
+    // Zombrex Grab
+    // if (current.Zombrex > old.Zombrex)
+    // {
+    //     return settings["zombrex"];
+    // }
 
     // Max Level
     if (current.PlayerLevel != old.PlayerLevel)
