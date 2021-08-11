@@ -22,7 +22,40 @@ This script supports Timeskip, Max Level and Zombie Genocide Master.
   - Splits on a large variety of checkpoints to meet all your speedrun needs. 
 
 # How to Use
+- Download latest release at [Latest Release](https://github.com/PNPS-Edge/DeadRising_LiveSplit_Autosplitter/releases/latest)
+- Open LiveSplit
 
+## Deactivate the default Autosplitter
+- When Livesplit is open, edit your splits file. With a right click and "Edit Splits".
+
+![Edit_Splits](https://user-images.githubusercontent.com/42294009/129011086-37fbcb36-379f-4090-92e6-8566ec545787.png)
+
+- Than make sure that the default autosplitter is DEACTIVED.
+
+![Splits_Editor](https://user-images.githubusercontent.com/42294009/129011434-0e23fc9d-c7cc-4c2a-907c-ed588c859607.png)
+
+- Click on "OK" to close the splits editor.
+If you are running different categories with different splits files check on each file.
+
+## Activate the Autosplitter file
+
+- Now edit your Layout with right click on Livesplit and "Edit Layout"
+
+![Edit_Layout](https://user-images.githubusercontent.com/42294009/129011751-a0346850-4ee7-41ad-b34a-68e892406df6.png)
+
+- Once the Layout editor is opened, click on the "+" sign, go under "Control" and select "Scriptable Auto Splitter".
+
+![Layout_Editor](https://user-images.githubusercontent.com/42294009/129011792-f79af6e3-c54b-4064-935d-f90bb6d4e659.png)
+
+- Then browse to the autosplitter file you just downloaded
+
+![Scriptable_Auto_Splitter](https://user-images.githubusercontent.com/42294009/129011823-2fe8557d-5eee-4f15-9fbe-22465d0c6b40.png)
+
+- Finally choose your needed splits according to your splits file.
+
+![Autosplitter](https://user-images.githubusercontent.com/42294009/129011878-2657f296-5393-4621-94a9-80a1671a6911.png)
+
+Enjoy ;)
 
 # Contact
 Join the Dead Rising Series Speedrun Community on [Discord](https://discord.com/invite/5ac3ZfV)
