@@ -32,7 +32,7 @@ This script supports Timeskip, Max Level and Zombie Genocide Master.
 
 - Than make sure that the default autosplitter is DEACTIVED.
 
-![Splits_Editor_DR2](https://user-images.githubusercontent.com/42294009/129030815-11fc83fc-bdd4-4025-95c2-49116be52b7a.png)
+![Splits_Editor_DR2](https://user-images.githubusercontent.com/42294009/129033862-6b749856-bff4-4c1d-8a40-3b12936f9e47.png)
 
 - Click on "OK" to close the splits editor.
 If you are running different categories with different splits files check on each file.
