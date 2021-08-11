@@ -19,6 +19,8 @@ startup
 
         settings.Add("72Hour", true, "72 Hour Splits", "splits");
             
+            settings.Add("zombrex", false, "Splits when you grab Zombrex", "72Hour");
+
             settings.Add("prologue", false, "Prologue Splits", "72Hour");
                 settings.Add("pro_TIRVictory", false, "TIR Victory", "prologue");
                 settings.Add("pro_LockerRoomElevator", false, "Locker Room Elevator", "prologue");
@@ -292,11 +294,11 @@ split
         }
     }
 
-    // Zombrex Grab
-    // if (current.Zombrex > old.Zombrex)
-    // {
-    //     return settings["zombrex"];
-    // }
+    //Zombrex Grab
+    if (current.Zombrex > old.Zombrex)
+    {
+        return settings["zombrex"];
+    }
 
     // Max Level
     if (current.PlayerLevel != old.PlayerLevel)
