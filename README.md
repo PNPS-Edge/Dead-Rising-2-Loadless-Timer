@@ -28,11 +28,11 @@ This script supports Timeskip, Max Level and Zombie Genocide Master.
 ## Deactivate the default Autosplitter
 - When Livesplit is open, edit your splits file. With a right click and "Edit Splits".
 
-![Edit_Splits](https://user-images.githubusercontent.com/42294009/129011086-37fbcb36-379f-4090-92e6-8566ec545787.png)
+![Edit_Splits_DR2](https://user-images.githubusercontent.com/42294009/129030780-5ae63837-3fdc-4002-9260-1dd9dc9b5f13.png)
 
 - Than make sure that the default autosplitter is DEACTIVED.
 
-![Splits_Editor](https://user-images.githubusercontent.com/42294009/129011434-0e23fc9d-c7cc-4c2a-907c-ed588c859607.png)
+![Splits_Editor_DR2](https://user-images.githubusercontent.com/42294009/129030815-11fc83fc-bdd4-4025-95c2-49116be52b7a.png)
 
 - Click on "OK" to close the splits editor.
 If you are running different categories with different splits files check on each file.
@@ -41,7 +41,7 @@ If you are running different categories with different splits files check on eac
 
 - Now edit your Layout with right click on Livesplit and "Edit Layout"
 
-![Edit_Layout](https://user-images.githubusercontent.com/42294009/129011751-a0346850-4ee7-41ad-b34a-68e892406df6.png)
+![Edit_Layout_DR2](https://user-images.githubusercontent.com/42294009/129030900-37d0711e-698f-4fde-b301-b2f903e10718.png)
 
 - Once the Layout editor is opened, click on the "+" sign, go under "Control" and select "Scriptable Auto Splitter".
 
@@ -53,7 +53,7 @@ If you are running different categories with different splits files check on eac
 
 - Finally choose your needed splits according to your splits file.
 
-![Autosplitter](https://user-images.githubusercontent.com/42294009/129011878-2657f296-5393-4621-94a9-80a1671a6911.png)
+![Autosplitter_DR2](https://user-images.githubusercontent.com/42294009/129030942-08c3a3f5-4369-492c-855f-8b070b1c30e0.png)
 
 Enjoy ;)
 
