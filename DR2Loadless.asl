@@ -105,6 +105,8 @@ startup
                 settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
                 settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
 
+/*   
+    
     // Overtime
         settings.Add("overtime", false, "Overtime", "splits");
 
@@ -124,7 +126,7 @@ startup
             settings.Add("psy_Ted_Death", false, "Snowflake and Ted", "psychoskip");
             settings.Add("psy_Bibi_Love_1", false, "Bibi Love Ending 1", "psychoskip");
             settings.Add("psy_Bibi_Love_2", false, "Bibi Love Ending 2", "psychoskip");
-
+*/
     // Max Level
         settings.Add("maxLevel", false, "Max Level", "splits");
             for (int level = 5; level <= 50; level += 5)
@@ -175,8 +177,8 @@ init
         {"041a",  "c41_AmbersDeath"},
         {"042_",  "zombrex3"},
         {"043_",  "c51_gateway"},
-        {"045_",  "c51_HelicopterIntro"},
-        {"046_",  "c51_HelicopterDeath"},
+        {"045_",  "c52_HelicopterIntro"},
+        {"046_",  "c52_HelicopterDeath"},
         {"048a",  "c52_TkSafehouse"},
         {"049_",  "zombrex4"},
         {"051_",  "c61_all_hell"},
@@ -231,7 +233,7 @@ update
 
 start 
 {
-    return old.CutsceneId == "001_" && current.CutsceneId != "001_";
+    return old.CutsceneId == "003_" && current.CutsceneId != "003_";
 }
 
 reset 
