@@ -17,7 +17,8 @@ startup
     // Settings tree
     settings.Add("splits", true, "All Splits");
 
-        settings.Add("72Hour", true, "72 Hour Splits", "splits");
+    // 72 Hours
+        settings.Add("72Hour", true, "72 Hours Splits", "splits");
             
             settings.Add("prologue", false, "Prologue Splits", "72Hour");
                 settings.Add("pro_TIRVictory", false, "TIR Victory", "prologue");
@@ -29,7 +30,7 @@ startup
                 settings.Add("zo1_AirDuct", false, "Air Duct", "zombrex1");
                 settings.Add("zo1_Looters", false, "Looters", "zombrex1");
                 settings.Add("zo1_Sullivan", false, "Safehouse", "zombrex1");
-                settings.Add("zo1_Katey", false, "Zombrex 1", "zombrex1");
+                settings.Add("zo1_Katey", false, "Katey", "zombrex1");
 
             settings.Add("case1", false, "Case 1 Splits", "72Hour");
                 settings.Add("c11_Framed", false, "Case 1-1", "case1");
@@ -40,7 +41,7 @@ startup
                     settings.Add("c13_Gate", false, "Opening The Gate", "c13");
                     settings.Add("c13_Security", false, "Case 1-3", "c13");
 
-                settings.Add("c14_Alliance", false, "Case 1-4 Splits", "case1");
+                settings.Add("c14_Alliance", false, "Case 1-4", "case1");
 
             settings.Add("case2", false, "Case 2 Splits", "72Hour");
                 settings.Add("c21_StaceySeesSomething", false, "Case 2-1", "case2");
@@ -105,7 +106,8 @@ startup
                 settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
                 settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
 
-/*   
+        settings.Add("zombrex", false, "Zombre picking", "splits")
+/*      
     
     // Overtime
         settings.Add("overtime", false, "Overtime", "splits");
@@ -155,14 +157,14 @@ init
         {"012_",  "pro_RescueKatey"},
         {"013_",  "pro_ExitArena"},
         {"017_",  "zo1_AirDuct"},
-        {"019_",  "zo1_Looters"},
+        {"020_",  "zo1_Looters"},
         {"021_",  "zo1_Sullivan"},
         {"023_",  "zo1_Katey"},
         {"024_",  "c11_Framed"},
         {"025_",  "c12_Rebecca"},
         {"025a",  "c13_Gate"},
         {"026_",  "c13_Security"},
-        {"028_",  "c14_Alliance"},
+        {"027_",  "c14_Alliance"},
         {"029_",  "c21_StaceySeesSomething"},
         {"030_",  "c22_TrainDock"},
         {"031_",  "c22_TrainBattle"},
@@ -252,9 +254,6 @@ split
     if (vars.Cutscenes.ContainsKey(current.CutsceneId) && !vars.Splits.Contains(vars.Cutscenes[current.CutsceneId]))
     {
         vars.Splits.Add(vars.Cutscenes[current.CutsceneId]);
-
-        print(current.CutsceneId);
-
         return settings[vars.Cutscenes[current.CutsceneId]];
     }
 
@@ -295,19 +294,19 @@ split
     }
 
     // Zombrex Grab
-    // if (current.Zombrex > old.Zombrex)
-    // {
-    //     return settings["zombrex"];
-    // }
+    if (current.Zombrex > old.Zombrex)
+    {
+        return settings["zombrex"];
+    }
 
     // Max Level
-    if (current.PlayerLevel != old.PlayerLevel)
+    if (settings["maxLevel"] && current.PlayerLevel != old.PlayerLevel)
     {
         return settings["level" + current.PlayerLevel.ToString()];
     }
 
     // Zombie Genocide Master
-    if (current.ZombiesKilled != old.ZombiesKilled)
+    if (settings["zombieGenocider"] && current.ZombiesKilled != old.ZombiesKilled)
     {
         foreach(int count in vars.GenociderKills)
         {

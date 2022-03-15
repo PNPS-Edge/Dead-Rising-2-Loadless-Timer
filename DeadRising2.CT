@@ -19,28 +19,24 @@
             <CheatEntry>
               <ID>0</ID>
               <Description>"PM1 - Zombrex - F6C - 0C"</Description>
-              <LastState Value="481538032" RealAddress="1CB3AF6C"/>
               <VariableType>4 Bytes</VariableType>
               <Address>1CB3AF6C</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>1</ID>
               <Description>"PM2 - Zombrex - F6C - 0C"</Description>
-              <LastState Value="0" RealAddress="1CB39F6C"/>
               <VariableType>4 Bytes</VariableType>
               <Address>1CB39F6C</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>2</ID>
               <Description>"PM3 - Zombrex - F6C - 0C"</Description>
-              <LastState Value="1" RealAddress="1CB31F6C"/>
               <VariableType>4 Bytes</VariableType>
               <Address>1CB31F6C</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>3</ID>
               <Description>"PM4 - Zombrex - F6C -0C"</Description>
-              <LastState Value="0" RealAddress="1CB3DF6C"/>
               <VariableType>4 Bytes</VariableType>
               <Address>1CB3DF6C</Address>
             </CheatEntry>
@@ -59,7 +55,6 @@
         <CheatEntry>
           <ID>41</ID>
           <Description>"Is Loading"</Description>
-          <LastState Value="0" RealAddress="1E9177FC"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Byte</VariableType>
           <Address>deadrising2.exe + 9DC3F0</Address>
@@ -71,7 +66,6 @@
         <CheatEntry>
           <ID>10</ID>
           <Description>"Is Cutscene Running"</Description>
-          <LastState Value="0" RealAddress="1B0EF094"/>
           <VariableType>4 Bytes</VariableType>
           <Address>"deadrising2.exe"+009E5C5C</Address>
           <Offsets>
@@ -83,7 +77,6 @@
         <CheatEntry>
           <ID>42</ID>
           <Description>"Is In Campaign"</Description>
-          <LastState Value="1" RealAddress="1E91780C"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Byte</VariableType>
           <Address>deadrising2.exe + 9DC3F0</Address>
@@ -95,7 +88,6 @@
         <CheatEntry>
           <ID>25</ID>
           <Description>"Data Information"</Description>
-          <LastState RealAddress="1EF4AC9F"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>String</VariableType>
           <Length>50</Length>
@@ -111,7 +103,6 @@
         <CheatEntry>
           <ID>26</ID>
           <Description>"CutsceneId"</Description>
-          <LastState RealAddress="1EF4ACB3"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>String</VariableType>
           <Length>4</Length>
@@ -137,7 +128,6 @@
         <CheatEntry>
           <ID>33</ID>
           <Description>"IGT ??? -&gt; Seconds from 09/25 Midnight"</Description>
-          <LastState Value="26528" RealAddress="28E3BE54"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>"deadrising2.exe"+00A11604</Address>
@@ -149,7 +139,6 @@
         <CheatEntry>
           <ID>49</ID>
           <Description>"RoomId"</Description>
-          <LastState Value="87" RealAddress="00D5A2F0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>"deadrising2.exe"+009E5C50</Address>
           <Offsets>
@@ -171,7 +160,6 @@
         <CheatEntry>
           <ID>31</ID>
           <Description>"Health"</Description>
-          <LastState Value="1200" RealAddress="1D3F19B8"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>deadrising2.exe + 9DE9A8</Address>
@@ -183,7 +171,6 @@
         <CheatEntry>
           <ID>19</ID>
           <Description>"Level"</Description>
-          <LastState Value="50" RealAddress="1D3F19AC"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>"deadrising2.exe"+009DE9A8</Address>
@@ -195,7 +182,6 @@
         <CheatEntry>
           <ID>43</ID>
           <Description>"Zombies Killed"</Description>
-          <LastState Value="8" RealAddress="1D3F19C4"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Byte</VariableType>
           <Address>deadrising2.exe + 9DE9A8</Address>
@@ -223,7 +209,6 @@
         <CheatEntry>
           <ID>37</ID>
           <Description>"Money"</Description>
-          <LastState Value="16800" RealAddress="1D3F19FC"/>
           <VariableType>4 Bytes</VariableType>
           <Address>"deadrising2.exe"+009DE9A8</Address>
           <Offsets>
@@ -234,7 +219,6 @@
         <CheatEntry>
           <ID>15</ID>
           <Description>"Total PP General"</Description>
-          <LastState Value="10242645" RealAddress="1D3F19B0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>"deadrising2.exe"+009DE9A8</Address>
           <Offsets>
@@ -244,7 +228,6 @@
         <CheatEntry>
           <ID>38</ID>
           <Description>"Total PP Game"</Description>
-          <LastState Value="1500" RealAddress="1D3F19B4"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>"deadrising2.exe"+009DE9A8</Address>
@@ -257,7 +240,6 @@
     <CheatEntry>
       <ID>64</ID>
       <Description>"CampaignProgress"</Description>
-      <LastState Value="480119336" RealAddress="1CAABBBC"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"deadrising2.exe"+002F6FC8</Address>
       <Offsets>
@@ -268,7 +250,6 @@
     <CheatEntry>
       <ID>65</ID>
       <Description>"Mission Id"</Description>
-      <LastState Value="81551" RealAddress="1CAAD68C"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"deadrising2.exe"+002F6FC8</Address>
       <Offsets>
