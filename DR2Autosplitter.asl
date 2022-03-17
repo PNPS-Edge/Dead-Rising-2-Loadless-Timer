@@ -105,9 +105,9 @@ startup
             settings.Add("endings", false, "ENDING A Splits", "72Hour");
                 settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
                 settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
-
-        settings.Add("zombrex", false, "Zombre picking", "splits")
-/*      
+/*
+        settings.Add("zombrex", false, "Zombre picking", "splits");
+      
     
     // Overtime
         settings.Add("overtime", false, "Overtime", "splits");
@@ -164,7 +164,7 @@ init
         {"025_",  "c12_Rebecca"},
         {"025a",  "c13_Gate"},
         {"026_",  "c13_Security"},
-        {"027_",  "c14_Alliance"},
+        {"028_",  "c14_Alliance"},
         {"029_",  "c21_StaceySeesSomething"},
         {"030_",  "c22_TrainDock"},
         {"031_",  "c22_TrainBattle"},
@@ -178,7 +178,7 @@ init
         {"041_",  "c41_CrystalsDeath"},
         {"041a",  "c41_AmbersDeath"},
         {"042_",  "zombrex3"},
-        {"043_",  "c51_gateway"},
+        {"043_",  "c51_Gateway"},
         {"045_",  "c52_HelicopterIntro"},
         {"046_",  "c52_HelicopterDeath"},
         {"048a",  "c52_TkSafehouse"},
@@ -204,7 +204,7 @@ init
         {"083a",  "psy_Bibi_Love_2"},
         {"085_",  "psy_Reed_Roger"},
         {"086_",  "psy_Slappy"},
-        {"088_",  "c51_Militiamen"},
+        {"088_",  "c52_Militiamen"},
         {"090_",  "psy_Carl_Mailman"},
         {"092_",  "psy_Brandon_Cure"},
         {"094_",  "psy_Security_Gard"},
@@ -257,47 +257,47 @@ split
         return settings[vars.Cutscenes[current.CutsceneId]];
     }
 
-    // Room transitions
-    if (!current.IsLoading && vars.CurrentRoomId != current.RoomId)
-    {
-        vars.CurrentRoomId = current.RoomId;
-    }
+    // // Room transitions
+    // if (!current.IsLoading && vars.CurrentRoomId != current.RoomId)
+    // {
+    //     vars.CurrentRoomId = current.RoomId;
+    // }
 
-    if (current.RoomId != old.RoomId)
-    {
-        if (vars.Rooms.ContainsKey(current.RoomId) && vars.Rooms.ContainsKey(old.RoomId))
-        {
-            string chapter = "0";
-            foreach (string key in vars.CaseProgress.Keys)
-            {
-                if (vars.CaseProgress[key].Contains(current.CampaignProgress))
-                {
-                    chapter = key;
-                    break;
-                }
-            }
+    // if (current.RoomId != old.RoomId)
+    // {
+    //     if (vars.Rooms.ContainsKey(current.RoomId) && vars.Rooms.ContainsKey(old.RoomId))
+    //     {
+    //         string chapter = "0";
+    //         foreach (string key in vars.CaseProgress.Keys)
+    //         {
+    //             if (vars.CaseProgress[key].Contains(current.CampaignProgress))
+    //             {
+    //                 chapter = key;
+    //                 break;
+    //             }
+    //         }
 
-            string settingsKey = "case" + chapter + vars.Rooms[old.RoomId] + "->" + vars.Rooms[current.RoomId];
-            if (vars.Splits.Contains(settingsKey))
-            {
-                return false;
-            }
+    //         string settingsKey = "case" + chapter + vars.Rooms[old.RoomId] + "->" + vars.Rooms[current.RoomId];
+    //         if (vars.Splits.Contains(settingsKey))
+    //         {
+    //             return false;
+    //         }
 
-            vars.Splits.Add(settingsKey);
+    //         vars.Splits.Add(settingsKey);
 
-            // ONLY return if the setting is enabled, as some transitions are duplicates
-            if (settings[settingsKey])
-            {
-                return true;
-            };
-        }
-    }
+    //         // ONLY return if the setting is enabled, as some transitions are duplicates
+    //         if (settings[settingsKey])
+    //         {
+    //             return true;
+    //         };
+    //     }
+    // }
 
-    // Zombrex Grab
-    if (current.Zombrex > old.Zombrex)
-    {
-        return settings["zombrex"];
-    }
+    // // Zombrex Grab
+    // if (current.Zombrex > old.Zombrex)
+    // {
+    //     return settings["zombrex"];
+    // }
 
     // Max Level
     if (settings["maxLevel"] && current.PlayerLevel != old.PlayerLevel)
