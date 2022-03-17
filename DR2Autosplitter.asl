@@ -1,3 +1,4 @@
+// Version 1.0.0.0
 state("deadrising2")
 {
   bool IsLoading: 0x9DC3F0, 0x38, 0x1C8;
@@ -105,30 +106,7 @@ startup
             settings.Add("endings", false, "ENDING A Splits", "72Hour");
                 settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
                 settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
-/*
-        settings.Add("zombrex", false, "Zombre picking", "splits");
-      
-    
-    // Overtime
-        settings.Add("overtime", false, "Overtime", "splits");
 
-            settings.Add("ot_TK_Intro", false, "TK Battle Intro", "overtime");
-            settings.Add("ot_TK_Death", false, "TK Death", "overtime");
-
-    // PsychoSkip
-        settings.Add("psychoskip", false, "PsychoSkip", "splits");
-            settings.Add("psy_Chef_Antoine", false, "Chef Antoine", "psychoskip");
-            settings.Add("psy_Randy_Virgin", false, "Randy the Virgin", "psychoskip");
-            settings.Add("psy_Leon_Bell", false, "Leon the Contestant", "psychoskip");
-            settings.Add("psy_Brandon_Cure", false, "Brandon Cure Member", "psychoskip");
-            settings.Add("psy_Reed_Roger", false, "The Magicians", "psychoskip");
-            settings.Add("psy_Slappy", false, "Slappy", "psychoskip");
-            settings.Add("psy_Carl_Mailman", false, "Carl Mailman", "psychoskip");
-            settings.Add("psy_Security_Gard", false, "Seymour Security Agent", "psychoskip");
-            settings.Add("psy_Ted_Death", false, "Snowflake and Ted", "psychoskip");
-            settings.Add("psy_Bibi_Love_1", false, "Bibi Love Ending 1", "psychoskip");
-            settings.Add("psy_Bibi_Love_2", false, "Bibi Love Ending 2", "psychoskip");
-*/
     // Max Level
         settings.Add("maxLevel", false, "Max Level", "splits");
             for (int level = 5; level <= 50; level += 5)
@@ -256,48 +234,6 @@ split
         vars.Splits.Add(vars.Cutscenes[current.CutsceneId]);
         return settings[vars.Cutscenes[current.CutsceneId]];
     }
-
-    // // Room transitions
-    // if (!current.IsLoading && vars.CurrentRoomId != current.RoomId)
-    // {
-    //     vars.CurrentRoomId = current.RoomId;
-    // }
-
-    // if (current.RoomId != old.RoomId)
-    // {
-    //     if (vars.Rooms.ContainsKey(current.RoomId) && vars.Rooms.ContainsKey(old.RoomId))
-    //     {
-    //         string chapter = "0";
-    //         foreach (string key in vars.CaseProgress.Keys)
-    //         {
-    //             if (vars.CaseProgress[key].Contains(current.CampaignProgress))
-    //             {
-    //                 chapter = key;
-    //                 break;
-    //             }
-    //         }
-
-    //         string settingsKey = "case" + chapter + vars.Rooms[old.RoomId] + "->" + vars.Rooms[current.RoomId];
-    //         if (vars.Splits.Contains(settingsKey))
-    //         {
-    //             return false;
-    //         }
-
-    //         vars.Splits.Add(settingsKey);
-
-    //         // ONLY return if the setting is enabled, as some transitions are duplicates
-    //         if (settings[settingsKey])
-    //         {
-    //             return true;
-    //         };
-    //     }
-    // }
-
-    // // Zombrex Grab
-    // if (current.Zombrex > old.Zombrex)
-    // {
-    //     return settings["zombrex"];
-    // }
 
     // Max Level
     if (settings["maxLevel"] && current.PlayerLevel != old.PlayerLevel)
