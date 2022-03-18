@@ -62,9 +62,8 @@ startup
                 settings.Add("c32_Thwarted", false, "Case 3-2", "case3");
 
             settings.Add("case4", false, "Case 4 Splits", "72Hour");
-                settings.Add("c41_twinsBossIntro", false, "Twins Battle Intro", "case4");
-                settings.Add("c41_AmbersDeath", false, " Case 4-1 Amber's Death", "case4");
-                settings.Add("c41_CrystalsDeath", false, "Case 4-1 Crystal's Death", "case4");
+                settings.Add("c41_twinsBossIntro", false, "In da club", "case4");
+                settings.Add("c41_TwinDeath", false, "2 Girls 1 Death", "case4");
 
             settings.Add("zombrex3", false, "Zombrex 3", "72Hour");
 
@@ -106,6 +105,20 @@ startup
             settings.Add("endings", false, "ENDING A Splits", "72Hour");
                 settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
                 settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
+
+    // Psychoskip
+        settings.Add("psychoskip", true, "Psychoskip", "splits");
+            settings.Add("psy_Ted_Death", true, "Ted Smith", "psychoskip");
+            settings.Add("psy_Snowflacke_Joins", true, "Snowflake", "psychoskip");
+            settings.Add("psy_Leon_Bell", true, "Leon Bell", "psychoskip");
+            settings.Add("psy_Brandon_Cure", true, "Brandon Whittaker", "psychoskip");
+            settings.Add("psy_Chef_Antoine", true, "Antoine Thomas", "psychoskip");
+            settings.Add("psy_Slappy", true, "Brent Ernst", "psychoskip");
+            settings.Add("psy_Randy_Virgin", true, "Randy Tugman", "psychoskip");
+            settings.Add("psy_Carl_Mailman", true, "Carl Schliff", "psychoskip");
+            settings.Add("psy_Security_Gard", true, "Seymour Redding", "psychoskip");
+            settings.Add("psy_Militiamen", true, "Militia men", "psychoskip");
+            settings.Add("psy_Bibi_Love_2", true, "Bibi Love", "psychoskip");
 
     // Max Level
         settings.Add("maxLevel", false, "Max Level", "splits");
@@ -153,8 +166,8 @@ init
         {"036_",  "c31_explosion"},
         {"037_",  "c32_Thwarted"},
         {"039_",  "c41_twinsBossIntro"},
-        {"041_",  "c41_CrystalsDeath"},
-        {"041a",  "c41_AmbersDeath"},
+        {"041_",  "c41_TwinDeath"},
+        {"041a",  "c41_TwinDeath"},
         {"042_",  "zombrex3"},
         {"043_",  "c51_Gateway"},
         {"045_",  "c52_HelicopterIntro"},
@@ -233,6 +246,12 @@ split
     {
         vars.Splits.Add(vars.Cutscenes[current.CutsceneId]);
         return settings[vars.Cutscenes[current.CutsceneId]];
+    }
+
+    // psychoskip
+    if (settings["psychoskip"] && settings["psy_Militiamen"])
+    {
+        
     }
 
     // Max Level
