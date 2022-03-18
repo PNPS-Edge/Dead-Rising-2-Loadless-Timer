@@ -14,13 +14,14 @@
 # Summary
 A LiveSplit script for the Dead Rising 2.
 
-This script supports Timeskip, Max Level and Zombie Genocide Master.
-
 # Features
   - Removes loads and cutscenes from the timer.
   - Starts automatically when player has control.
   - Resets automatically when player is back to main menu.
   - Splits on a large variety of checkpoints to meet all your speedrun needs. 
+  - Compliant with TIMESKIP category.
+  - Compliant with LEVEL MAX category.
+  - Compliant with ZOMBIE GENOCIDE MASTER category.
 
 # How to Use
 - Download latest release at [Latest Release](https://github.com/PNPS-Edge/DeadRising2_LiveSplit_Autosplitter/releases/latest)
