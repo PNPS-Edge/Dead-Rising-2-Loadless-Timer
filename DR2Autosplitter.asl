@@ -2,15 +2,19 @@
 state("deadrising2")
 {
   bool IsLoading: 0x9DC3F0, 0x38, 0x1C8;
+  string4 CutsceneId : 0x9DC3F0, 0x38, 0xCC;
+  
   bool IsCutsceneRunning : 0x9E5C5C, 0xB08, 0x9F8, 0x20;
-  string4 CutsceneId : 0x9CB0FC, 0x58, 0x37;
-
+  
   int InGameTime : 0xA11604, 0xA38, 0x2B94;
   int ZombiesKilled : 0x9DE9A8, 0x8, 0x38;
   int PlayerLevel : 0x9DE9A8, 0x8, 0x20;
-  int Zombrex : 0xA11604, 0xA2C, 0x61C, 0x12D0, 0x1F0, 0x116C, 0x868, 0xC;
+  int Zombrex : 0x9DE9A8, 0x17FA;
 
   int RoomId : 0x9E5C50, 0x2318, 0x54, 0x9C0;
+
+  float SnowflakeHealth: 0xA12390, 0x11C, 0x1FC, 0x9C0;
+  float MilitiaMenHealth: 0xA11604, 0x998, 0x4C, 0x30, 0x9C0;
 }
 
 startup 
@@ -105,20 +109,21 @@ startup
             settings.Add("endings", false, "ENDING A Splits", "72Hour");
                 settings.Add("ending_a", false, "ENDING A for timeskip", "endings");
                 settings.Add("ending_b", false, "ENDING A for timeskip", "endings");
+        settings.Add("zombrex", false, "Zombrex pick up", "72Hour");
 
     // Psychoskip
-        settings.Add("psychoskip", true, "Psychoskip", "splits");
-            settings.Add("psy_Ted_Death", true, "Ted Smith", "psychoskip");
-            settings.Add("psy_Snowflacke_Joins", true, "Snowflake", "psychoskip");
-            settings.Add("psy_Leon_Bell", true, "Leon Bell", "psychoskip");
-            settings.Add("psy_Brandon_Cure", true, "Brandon Whittaker", "psychoskip");
-            settings.Add("psy_Chef_Antoine", true, "Antoine Thomas", "psychoskip");
-            settings.Add("psy_Slappy", true, "Brent Ernst", "psychoskip");
-            settings.Add("psy_Randy_Virgin", true, "Randy Tugman", "psychoskip");
-            settings.Add("psy_Carl_Mailman", true, "Carl Schliff", "psychoskip");
-            settings.Add("psy_Security_Gard", true, "Seymour Redding", "psychoskip");
-            settings.Add("psy_Militiamen", true, "Militia men", "psychoskip");
-            settings.Add("psy_Bibi_Love_2", true, "Bibi Love", "psychoskip");
+        settings.Add("psychoskip", false, "Psychoskip", "splits");
+            settings.Add("psy_Ted_Death", false, "Ted Smith", "psychoskip");
+            settings.Add("psy_Snowflacke_Joins", false, "Snowflake", "psychoskip");
+            settings.Add("psy_Leon_Bell", false, "Leon Bell", "psychoskip");
+            settings.Add("psy_Brandon_Cure", false, "Brandon Whittaker", "psychoskip");
+            settings.Add("psy_Chef_Antoine", false, "Antoine Thomas", "psychoskip");
+            settings.Add("psy_Slappy", false, "Brent Ernst", "psychoskip");
+            settings.Add("psy_Randy_Virgin", false, "Randy Tugman", "psychoskip");
+            settings.Add("psy_Carl_Mailman", false, "Carl Schliff", "psychoskip");
+            settings.Add("psy_Security_Gard", false, "Seymour Redding", "psychoskip");
+            settings.Add("psy_Militiamen", false, "Militia men", "psychoskip");
+            settings.Add("psy_Bibi_Love_2", false, "Bibi Love", "psychoskip");
 
     // Max Level
         settings.Add("maxLevel", false, "Max Level", "splits");
@@ -217,6 +222,7 @@ init
     };
 
     vars.CurrentRoomId = 0;
+    vars.MilitiaMenCooldown = 0;
 }
 
 update 
@@ -248,10 +254,26 @@ split
         return settings[vars.Cutscenes[current.CutsceneId]];
     }
 
-    // psychoskip
-    if (settings["psychoskip"] && settings["psy_Militiamen"])
+    // Zombrex pick up
+    if (settings["zombrex"] && current.Zombrex > old.Zombrex)
     {
-        
+        return settings ["zombrex"];
+    }
+
+    // psychoskip
+    if (settings["psychoskip"] && settings["psy_Militiamen"] && current.RoomId == 138)
+    {
+        if (vars.MilitiaMenCooldown > 0)
+        {
+            vars.MilitiaMenCooldown--;
+        }
+
+        if((current.MilitiaMenHealth <= 0 && current.MilitiaMenHealth != old.MilitiaMenHealth) && !current.IsLoading && !current.IsCutsceneRunning && vars.MilitiaMenCooldown <= 0)
+        {
+            print((current.MilitiaMenHealth != old.MilitiaMenHealth).ToString());
+            vars.militiamenCooldown = 150;
+            return settings["psy_Militiamen"];
+        }
     }
 
     // Max Level
